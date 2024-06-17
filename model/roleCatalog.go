@@ -1,11 +1,13 @@
 package model
 
-type roleCatalog struct {
-   RoleId string  `json:"roleId"`
-   RoleCode string `json:"roleCode"`
-   RoleDesc string  `json:"roleDesc"`
+type RoleCatalog struct {
+	RoleId   string `json:"roleId" binding:"required"`
+	RoleCode string `json:"roleCode" binding:"required"`
+	RoleDesc string `json:"roleDesc"`
+	Lob      string `json:"lob" binding:"required"`
 }
 
-func populateRoleCatalog() roleCatalog{
-  return  roleCatalog{RoleId: "abc123",RoleCode: "PR",RoleDesc: "Primary"}
+func PopulateRoleCatalog() RoleCatalog {
+
+	return RoleCatalog{RoleId: "abc123", RoleCode: "PR", RoleDesc: "Primary"}
 }
