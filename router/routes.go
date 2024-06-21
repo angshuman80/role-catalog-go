@@ -16,6 +16,6 @@ func InitializeRoleCatalogRoute() Routes {
 	return r
 }
 
-func (r *Routes) Run() {
-	log.Fatalln(r.router.Run(":8090"))
+func (r *Routes) Run(port string) {
+	log.Fatalln(r.router.Run(":" + port))
 }

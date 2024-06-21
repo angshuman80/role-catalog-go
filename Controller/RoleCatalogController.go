@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
+	"role-catalog-go/Service"
 	"role-catalog-go/model"
 )
 
@@ -35,9 +36,11 @@ func createRoleCatalog(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
 	log.Println(rolecatalog.RoleId + " " + rolecatalog.RoleCode + " " + rolecatalog.Lob)
+	Service.CreateRoleCatalog(rolecatalog)
 	c.JSON(http.StatusCreated, "created")
 }
 
 func getAllRoleCatalog(c *gin.Context) {
+	Service.GetAllRoles()
 	c.JSON(200, gin.H{"data": rolecatalog})
 }

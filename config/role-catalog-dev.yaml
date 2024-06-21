@@ -1,0 +1,9 @@
+SERVER:
+  PORT: 8090
+
+DB:
+  HOST: "localhost"
+  PORT: "27017"
+  USERNAME: "admin"
+  PASWORD: "password"
+  NAME: "testdb"
